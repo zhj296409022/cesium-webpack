@@ -1,6 +1,6 @@
 {
   "name": "cesium-webpack",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "cesium的webpack快速打包工具",
   "main": "index.js",
   "scripts": {
