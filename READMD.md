@@ -1,5 +1,7 @@
 # cesium-webpack
 
+使用webpack打包cesium
+
 暂时只支持 **webpack-chain** 打包方式
 
 # 安装
