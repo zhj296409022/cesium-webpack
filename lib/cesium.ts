@@ -2,16 +2,13 @@ import Config = require('webpack-chain')
 import path = require('path')
 import CopyWebpackPlugin = require('copy-webpack-plugin')
 import webpack = require('webpack')
+import { pack as glsl } from './glsl'
 
 //cesium资源路径
 const cesiumSource = 'node_modules/cesium/Source'
 const cesiumWorkers = '../Build/Cesium/Workers'
 
 export interface LoadOpts {
-  /**
-   * glsl loader
-   */
-  glsl?: boolean
   /**
    * 输出目录，默认output.path
    */
@@ -23,13 +20,15 @@ export interface LoadOpts {
 }
 
 const defaultOpts:LoadOpts = {
-  glsl: false,
   projectDir: '',
   outputDir: ''
 }
 
 export function pack(config: Config, opts?: LoadOpts) {
-    opts = Object.assign(opts || {}, defaultOpts)
+    opts = Object.assign({}, defaultOpts, opts || {})
+
+    //glsl
+    glsl(config)
 
     let outputPath = config.output.get('path')
 

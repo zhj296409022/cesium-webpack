@@ -1,7 +1,8 @@
-import { Viewer } from 'cesium'
+
+import glsl from './test.glsl'
+
+console.log(glsl)
 
 const container = document.createElement('div')
 
 document.body.appendChild(container)
-
-new Viewer(container)
