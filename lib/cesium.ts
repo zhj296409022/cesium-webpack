@@ -10,7 +10,7 @@ const cesiumWorkers = '../Build/Cesium/Workers'
 
 export interface LoadOpts {
   /**
-   * 输出目录，默认output.path
+   * 输出目录，默认output.path或者执行目录
    */
   outputDir?: string
   /**
@@ -30,9 +30,13 @@ export function pack(config: Config, opts?: LoadOpts) {
     //glsl
     glsl(config)
 
-    let outputPath = config.output.get('path')
+    let outputPath = null
 
-    outputPath = path.resolve(outputPath, opts.outputDir)
+    if(opts.outputDir) {
+      outputPath = path.resolve(opts.outputDir)
+    }else {
+      outputPath = config.output.get('path') || ''
+    }
 
     let sourcePath = path.resolve(opts.projectDir, cesiumSource)
 
@@ -52,19 +56,19 @@ export function pack(config: Config, opts?: LoadOpts) {
     config
     .plugin('cesium-workers')
         .use(CopyWebpackPlugin, [
-        [{ from: path.join(sourcePath, cesiumWorkers), to: path.resolve(outputPath, 'Workers') }]
+        [{ from: path.join(sourcePath, cesiumWorkers), to: path.join(outputPath, 'Workers') }]
     ])
 
     config
     .plugin('cesium-assets')
     .use(CopyWebpackPlugin, [
-      [{ from: path.join(sourcePath, 'Assets'), to: path.resolve(outputPath, 'Assets') }]
+      [{ from: path.join(sourcePath, 'Assets'), to: path.join(outputPath, 'Assets') }]
     ])
 
   config
     .plugin('cesium-widgets')
     .use(CopyWebpackPlugin, [
-      [{ from: path.join(sourcePath, 'Widgets'), to: path.resolve(outputPath, 'Widgets') }]
+      [{ from: path.join(sourcePath, 'Widgets'), to: path.join(outputPath, 'Widgets') }]
     ])
 
   //http加载资源的相对路径的前缀
