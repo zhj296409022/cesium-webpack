@@ -17,11 +17,13 @@ export interface LoadOpts {
    * 项目目录，确定node_modules,默认当前目录
    */
   projectDir?: string
+  cesium_base_url: string
 }
 
 const defaultOpts:LoadOpts = {
   projectDir: '',
-  outputDir: ''
+  outputDir: '',
+  cesium_base_url: ''
 }
 
 export function pack(config: Config, opts?: LoadOpts) {
@@ -74,5 +76,5 @@ export function pack(config: Config, opts?: LoadOpts) {
   //http加载资源的相对路径的前缀
   config
     .plugin('cesium-base-url')
-    .use(webpack.DefinePlugin, [{ CESIUM_BASE_URL: JSON.stringify('') }])
+    .use(webpack.DefinePlugin, [{ CESIUM_BASE_URL: JSON.stringify(opts.cesium_base_url) }])
 }
