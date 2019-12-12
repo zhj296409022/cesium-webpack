@@ -15,6 +15,8 @@ config.output.path(path.resolve(__dirname, '..', 'dist'))
 
 config.mode('production')
 
-cesium(config)
+cesium(config,{
+    cesium_base_url: '/'
+})
 
 module.exports = config.toConfig()
