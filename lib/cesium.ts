@@ -40,7 +40,7 @@ export function pack(config: Config, opts?: LoadOpts) {
       outputPath = config.output.get('path') || ''
     }
 
-    let sourcePath = path.resolve(opts.projectDir, cesiumSource)
+    let sourcePath = path.resolve(opts.projectDir || '', cesiumSource)
 
     //让cesium支持webpack
     config.output.sourcePrefix('')

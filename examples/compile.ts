@@ -1,6 +1,7 @@
 import Config = require('webpack-chain')
 import path = require('path')
 import { cesium } from '../index'
+import { css } from '../index'
 
 const config = new Config()
 
@@ -18,5 +19,7 @@ config.mode('production')
 cesium(config,{
     cesium_base_url: '/'
 })
+
+css(config)
 
 module.exports = config.toConfig()

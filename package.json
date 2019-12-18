@@ -1,6 +1,6 @@
 {
   "name": "cesium-webpack",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "cesium的webpack快速打包工具",
   "main": "index.js",
   "scripts": {
@@ -25,11 +25,19 @@
   "dependencies": {
     "@types/cesium": "^1.59.4",
     "@types/copy-webpack-plugin": "^5.0.0",
+    "@types/mini-css-extract-plugin": "^0.8.0",
     "@types/node": "^12.12.17",
+    "@types/optimize-css-assets-webpack-plugin": "^5.0.1",
     "@types/webpack": "^4.41.0",
     "cesium": "^1.64.0",
     "copy-webpack-plugin": "^5.0.5",
+    "css-loader": "^3.4.0",
+    "mini-css-extract-plugin": "^0.8.2",
+    "node-sass": "^4.13.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "raw-loader": "^4.0.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.2",
     "webpack": "^4.41.2",
     "webpack-chain": "^6.0.0"
   }
