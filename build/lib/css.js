@@ -4,7 +4,7 @@ var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 function pack(config) {
     ;
-    ['css', 'scss'].forEach(function (ext) {
+    ['.css', '.scss'].forEach(function (ext) {
         config.resolve.extensions.add(ext);
     });
     var cssRule = config.module.rule('css').test(/\.s?css$/);

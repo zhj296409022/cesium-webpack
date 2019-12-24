@@ -2,7 +2,9 @@
     "compilerOptions": {
         "lib": ["DOM", "ESNext"],
         "strict": true,
+        "declaration": true,
         "baseUrl": "./",
+        "outDir": "./build",
         "paths": {
             "libs/*": [
                 "lib/*"

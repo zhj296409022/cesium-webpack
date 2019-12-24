@@ -3,7 +3,7 @@ import MiniCssExtractPlugin = require('mini-css-extract-plugin')
 import OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 export function pack(config: Config) {
-    ;['css', 'scss'].forEach(ext=> {
+    ;['.css', '.scss'].forEach(ext=> {
         config.resolve.extensions.add(ext)
     })
 

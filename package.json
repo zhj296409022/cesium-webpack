@@ -1,8 +1,8 @@
 {
   "name": "cesium-webpack",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "cesium的webpack快速打包工具",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "test": "node_modules/.bin/mocha -r node_modules/ts-node/register lib/**/__test__/*.spec.ts",
     "example": "webpack --config examples/compile.ts"
