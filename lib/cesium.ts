@@ -10,7 +10,7 @@ const cesiumWorkers = '../Build/Cesium/Workers'
 
 export interface LoadOpts {
   /**
-   * 输出目录，默认output.path或者执行目录
+   * 输出目录，默认output.path或者自定义目录
    */
   outputDir?: string
   /**
@@ -35,7 +35,7 @@ export function pack(config: Config, opts?: LoadOpts) {
     let outputPath = null
 
     if(opts.outputDir) {
-      outputPath = path.resolve(opts.outputDir)
+      outputPath = opts.outputDir
     }else {
       outputPath = config.output.get('path') || ''
     }
