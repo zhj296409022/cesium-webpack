@@ -20,7 +20,7 @@
     "mocha": "^6.2.2",
     "ts-node": "^8.5.4",
     "typescript": "^3.7.3",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^5.0.1"
   },
   "dependencies": {
     "@types/cesium": "^1.59.4",
@@ -30,15 +30,15 @@
     "@types/optimize-css-assets-webpack-plugin": "^5.0.1",
     "@types/webpack": "^4.41.0",
     "cesium": "^1.64.0",
-    "copy-webpack-plugin": "^5.0.5",
-    "css-loader": "^3.4.0",
-    "mini-css-extract-plugin": "^0.8.2",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "mini-css-extract-plugin": "^2.7.2",
     "node-sass": "^4.13.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "raw-loader": "^4.0.0",
-    "sass-loader": "^8.0.0",
+    "sass-loader": "^13.2.0",
     "style-loader": "^1.0.2",
-    "webpack": "^4.41.2",
+    "webpack": "^5.75.0",
     "webpack-chain": "^6.0.0"
   }
 }
